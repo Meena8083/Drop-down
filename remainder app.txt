@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reminder App</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        select {
+            padding: 10px;
+            margin: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Set Your Daily Reminders</h2>
+
+    <label for="day">Day of the week:</label>
+    <select id="day">
+        <option value="Monday">Monday</option>
+        <option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option>
+        <option value="Thursday">Thursday</option>
+        <option value="Friday">Friday</option>
+        <option value="Saturday">Saturday</option>
+        <option value="Sunday">Sunday</option>
+    </select>
+
+    <label for="time">Choose the time:</label>
+    <input type="time" id="time">
+
+    <label for="activity">Choose the activity:</label>
+    <select id="activity">
+        <option value="Wake up">Wake up</option>
+        <option value="Go to gym">Go to gym</option>
+        <option value="Breakfast">Breakfast</option>
+        <option value="Meetings">Meetings</option>
+        <option value="Lunch">Lunch</option>
+        <option value="Quick nap">Quick nap</option>
+        <option value="Go to library">Go to library</option>
+        <option value="Dinner">Dinner</option>
+        <option value="Go to sleep">Go to sleep</option>
+    </select>
+
+    <button onclick="setReminder()">Set Reminder</button>
+
+    <script>
+        function setReminder() {
+            const day = document.getElementById('day').value;
+            const time = document.getElementById('time').value;
+            const activity = document.getElementById('activity').value;
+
+            const reminder = `On ${day} at ${time}, you have to ${activity}.`;
+
+            alert(reminder); // You can replace this with the logic to play a sound/chime
+
+            // You can send this data to the server for backend processing and storage
+        }
+    </script>
+
+</body>
+</html>
